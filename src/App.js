@@ -1,24 +1,60 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+
 
 function App() {
+
+  const [color,setColor]=useState("pink");
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <>
+        <div className="container-fluid h-100 m-0 p-0 fixed-bottom"
+          style={{backgroundColor:color}}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
+          <div className="container mb-5 justify-contant-center fixed-bottom ">
+            <button
+              className="btn shadow btn-outline-danger p-3 m-3 border-light"
+              onClick={()=>setColor("Red")}
+            >Red</button>
+
+            <button
+              className="btn shadow-lg btn-outline-success p-3 m-3 border-light"
+              onClick={()=>setColor("green")}
+            >Green</button>
+
+            <button
+              className="btn shadow-sm btn-outline-warning p-3 m-3 border-light"
+              onClick={()=>setColor("orange")}
+            >Orange</button>
+
+            <button
+              className="btn btn-outline-secondary p-3 m-3 border-light"
+              onClick={()=>setColor("Black")}
+            >Black</button>
+
+            <button
+              className="btn shadow btn-outline-warning p-3 m-3 border-light"
+              onClick={()=>setColor("yellow")}
+            >Yellow</button>
+
+            <button
+              className="btn opacity-50 btn-outline-primary p-3 m-3 border-light"
+              onClick={()=>setColor("blue")}
+            >Blue</button>
+
+            <button 
+              className="btn shadow-lg btn-outline-light p-3 m-3 border-light"
+              onClick={()=>{setColor('white')}}
+              >Light</button>
+
+              <button
+                className="btn btn-outline-info border-info p-3 m-3"
+                onClick={()=>{setColor("lightblue")}}
+              >
+              Info</button>
+          </div>
+        </div>
+    </>
   );
 }
 
